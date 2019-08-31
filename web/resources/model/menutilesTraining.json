@@ -1,0 +1,22 @@
+{
+  "TileCollection" : [
+    {
+      "image" : "images/menu3.png",
+      "contenttext" : "Train",
+      "subheader" : "Perform training",
+      "footer": "Training"
+    },
+    {
+      "image" : "images/menu3.png",
+      "contenttext" : "Training Status",
+      "subheader" : "Check training completion status",
+      "footer": "Training"
+    },
+    {
+      "image" : "images/menu3.png",
+      "contenttext" : "Training Records",
+      "subheader" : "View Training Records",
+      "footer": "Training"
+    }
+  ]
+}

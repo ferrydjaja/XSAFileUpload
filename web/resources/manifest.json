@@ -1,0 +1,218 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "ZHTS.ZHTS",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"dataSources": {
+		    "bpService": {
+				"uri": "/ACCESS_TEST/FD/LIB/HTS.xsodata/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			},
+			"oMenuTilesModelTraining": {
+				"uri": "model/menutilesTraining.json",
+				"type": "JSON"
+			},
+			"oMenuTilesModelScoring": {
+				"uri": "model/menutilesScoring.json",
+				"type": "JSON"
+			}
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "ZHTS.ZHTS.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "App"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+		    "": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay"
+				}
+			},
+			"bpModel": {
+				"dataSource": "bpService",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"preload": true,
+				"settings": {
+					"useBatch": false,
+					"json": true,
+					"defaultBindingMode": "TwoWay",
+					"defaultUpdateMethod": "PUT"
+				}
+			},
+			"config": {
+				"type": "sap.ui.model.json.JSONModel"
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleUrl": "./i18n/i18n.properties"
+				}
+			},
+			"MenuTilesModelTraining": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "oMenuTilesModelTraining"
+			},
+			"MenuTilesModelScoring": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "oMenuTilesModelScoring"
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "ZHTS.ZHTS.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false,
+				"viewLevel": 0,
+				"bypassed": {
+					"target": []
+				}
+			},
+			"routes": [{
+				"name": "home",
+				"pattern": "",
+				"titleTarget": "",
+				"greedy": false,
+				"target": [
+					"home"
+				]
+			},{
+				"name": "upload",
+				"pattern": "upload",
+				"titleTarget": "",
+				"greedy": false,
+				"target": [
+					"upload"
+				]
+			},{
+				"name": "app_portfolio",
+				"pattern": "app_portfolio",
+				"titleTarget": "",
+				"greedy": false,
+				"target": [
+					"app_portfolio"
+				]
+			},{
+				"name": "app_search",
+				"pattern": "app_search",
+				"titleTarget": "",
+				"greedy": false,
+				"target": [
+					"app_search"
+				]
+			},{
+				"name": "scoring_records_search",
+				"pattern": "scoring_records_search",
+				"titleTarget": "",
+				"greedy": false,
+				"target": [
+					"scoring_records_search"
+				]
+			},{
+				"name": "scoring_records",
+				"pattern": "scoring_records",
+				"titleTarget": "",
+				"greedy": false,
+				"target": [
+					"scoring_records"
+				]
+			}],
+			"targets": {
+				"home": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Main",
+					"viewLevel": 1
+				},
+				"upload": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Upload",
+					"viewLevel": 1
+				},
+				"app_search": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "AppSearch",
+					"viewLevel": 2
+				},
+				"app_portfolio": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "AppPortfolio",
+					"viewLevel": 2
+				},
+				"scoring_records_search": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ScoringRecordsSearch",
+					"viewLevel": 2
+				},
+				"scoring_records": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "ScoringRecords",
+					"viewLevel": 2
+				}
+			}
+		}
+	}
+}

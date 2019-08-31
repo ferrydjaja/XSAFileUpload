@@ -1,0 +1,43 @@
+<mvc:View controllerName="ZHTS.ZHTS.controller.Main" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+    <Page showHeader="true" enableScrolling="true" xmlns:html="http://www.w3.org/1999/xhtml">
+        <Panel expandable="true" expanded="false" headerText="Training" width="auto" class="sapUiResponsiveMargin">
+            <content>
+	            <FlexBox alignItems="Center" justifyContent="Center" wrap="Wrap">
+	                <l:HorizontalLayout id="menutilescontainerTraining" allowWrapping="true" content="{/TileCollection}">
+	                    <GenericTile class="customTile" header="" backgroundImage="{image}" frameType="TwoByOne" press="handlePressTraining" scope="Display">
+	                        <TileContent footer="{footer}">
+	                            <NewsContent contentText="{contenttext}" subheader="{subheader}" />
+	                        </TileContent>
+	                    </GenericTile>
+	                </l:HorizontalLayout>
+	            </FlexBox>
+            </content>
+        </Panel>
+        <Panel expandable="true" expanded="false" headerText="Scoring" width="auto" class="sapUiResponsiveMargin">
+            <content>
+	            <FlexBox alignItems="Center" justifyContent="Center" wrap="Wrap">
+	                <l:HorizontalLayout id="menutilescontainerScoring" allowWrapping="true" content="{/TileCollection}">
+	                    <GenericTile class="customTile" header="" backgroundImage="{image}" frameType="TwoByOne" press="handlePressScoring" scope="Display">
+	                        <TileContent footer="{footer}">
+	                            <NewsContent contentText="{contenttext}" subheader="{subheader}" />
+	                        </TileContent>
+	                    </GenericTile>
+	                </l:HorizontalLayout>
+	            </FlexBox>
+            </content>
+        </Panel>
+        <Panel expandable="true" expanded="false" headerText="Charts" width="auto" class="sapUiResponsiveMargin">
+            <content>
+	            <html:iframe target="_top" src="https://pfizer-test.us10.sapanalytics.cloud/sap/fpa/ui/tenants/1c966/app.html#;mode=embed;view_id=story;storyId=8CF972EC4D2442C466C5DC3B437C30B0" id="attachmentframe" height="700px" width="100%"/>
+            </content>
+        </Panel>
+        <customHeader>
+            <Bar>
+                <contentMiddle>
+                    <Text text="{i18n&gt;appTitle}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true" />
+                </contentMiddle>
+            </Bar>
+        </customHeader>
+        <footer></footer>
+    </Page>
+</mvc:View>

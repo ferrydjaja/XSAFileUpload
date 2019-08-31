@@ -1,0 +1,28 @@
+{
+  "TileCollection" : [
+    {
+      "image" : "images/menu2.png",
+      "contenttext" : "Upload New Material",
+      "subheader" : "Upload new material records for scoring",
+      "footer": "Scoring"
+    },
+    {
+      "image" : "images/menu2.png",
+      "contenttext" : "Scoring",
+      "subheader" : "Perform scoring (prediction)",
+      "footer": "Scoring"
+    },
+    {
+      "image" : "images/menu2.png",
+      "contenttext" : "Scoring Status",
+      "subheader" : "Scoring Status Completion",
+      "footer": "Scoring"
+    },
+    {
+      "image" : "images/menu2.png",
+      "contenttext" : "View Scoring Records",
+      "subheader" : "Scoring Records",
+      "footer": "Scoring"
+    }
+  ]
+}

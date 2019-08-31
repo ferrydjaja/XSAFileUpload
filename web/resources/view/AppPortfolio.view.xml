@@ -1,0 +1,99 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" controllerName="ZHTS.ZHTS.controller.AppPortfolio"
+	height="100%">
+	<Shell>
+		<App busy="{appView>/busy}" class="sapUiSizeCompact">
+			<pages>
+				<Page showHeader="true" title="Training Records" showFooter="true" showNavButton="true" navButtonText="Back" navButtonTap="doNavBack"
+					enableScrolling="false">
+					<ScrollContainer height="100%" width="100%" horizontal="false" vertical="true">
+						<content>
+							<Table id="table" fixedLayout="false" growing="true" growingScrollToLoad="true">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="Training Records" level="H2"/>
+										<ToolbarSpacer></ToolbarSpacer>
+										<Button icon="sap-icon://download" press="onDataExport"/>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<Text text="Prediction"/>
+									</Column>
+									<Column>
+										<Text text="Actual"/>
+									</Column>
+									<Column>
+										<Text text="Material #"/>
+									</Column>
+									<Column>
+										<Text text="Country"/>
+									</Column>
+									<Column>
+										<Text text="Match"/>
+									</Column>
+									<Column>
+										<Text text="MPG Code"/>
+									</Column>
+									<Column>
+										<Text text="Sample"/>
+									</Column>
+									<Column>
+										<Text text="Confidence"/>
+									</Column>
+									<Column>
+										<Text text="Technique"/>
+									</Column>
+									<Column>
+										<Text text="Timestamp"/>
+									</Column>
+									<Column>
+										<Text text="Run #"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem id="columnListItem">
+										<cells>
+											<Text text="{PREDICTION}"/>
+										</cells>
+										<cells>
+											<Text text="{ACTUAL}"/>
+										</cells>
+										<cells>
+											<Text text="{PRVSY}"/>
+										</cells>
+										<cells>
+											<Text text="{LAND1}"/>
+										</cells>
+										<cells>
+											<Text text="{MATCH}"/>
+										</cells>
+										<cells>
+											<Text text="{MPGCODE}"/>
+										</cells>
+										<cells>
+											<Text text="{SAMPLE}"/>
+										</cells>
+										<cells>
+											<Text text="{CONFIDENCE}"/>
+										</cells>
+										<cells>
+											<Text text="{TECHNIQUE}"/>
+										</cells>
+										<cells>
+											<Text text="{TIMESTAMP}"/>
+										</cells>
+										<cells>
+											<Text text="{RUNID}"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</ScrollContainer>
+					<subHeader/>
+					<customHeader/>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
